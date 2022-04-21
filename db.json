@@ -1,0 +1,153 @@
+{
+    "goods": [{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    },{
+        "id": 1,
+        "title": "Домашняя",
+        "desc": "Пикантная пепперони из цыпленка, ветчина из цыпленка, соленые огурчики, томаты, моцарелла, томатный соус",
+        "price": 2300,
+        "images": [
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/0de3f153379b4c96b1042069fd8dc83c_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/271813ff44fc41588760b93201eb08a5_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/3bb12aa6f0cb4b9992ba0506c4a3ef94_760x760.jpeg",
+            "https://dodopizza-a.akamaihd.net/static/Img/Products/e79765c7d6b3478e92f6f9b617e48259_760x760.jpeg"
+        ],
+        "ingridients": ["Пикантная пепперони из цыпленка", "ветчина из цыпленка", "соленые огурчики", "томаты", "моцарелла", "томатный соус"],
+        "category": "pizza"
+    }]
+}
