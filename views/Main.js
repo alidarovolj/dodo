@@ -11,21 +11,133 @@ import {
   FlatList,
   Image,
   TouchableHighlight,
+  Modal,
+  TextInput,
 } from "react-native";
 
 export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
+  var [fullInfo, getInfo] = useState({
+    login: "",
+    phone: "",
+    password: "",
+  });
+  var [modalVisible, setModalVisible] = useState(false);
   async function getAllProducts() {
     let res = await axios.get("http://localhost:3000/goods");
     let newProducts = res.data;
     getProduct(newProducts);
-    console.log(allProducts);
+  }
+  async function sendUser() {
+    console.log(fullInfo.login);
+    console.log(fullInfo.phone);
+    console.log(fullInfo.password);
   }
   getAllProducts();
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
+          <Modal
+            animationType="slide"
+            // transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <View
+              style={{
+                padding: 10,
+                flex: 1,
+                backgroundColor: "rgb(243, 243, 247)",
+              }}
+            >
+              <Text
+                style={{
+                  backgroundColor: "white",
+                  width: "fit-content",
+                  padding: 10,
+                  borderRadius: "100%",
+                }}
+                onPress={() => setModalVisible((modalVisible = false))}
+              >
+                <FontAwesome
+                  style={{
+                    fontSize: 20,
+                  }}
+                  name="chevron-down"
+                />
+              </Text>
+              <View>
+                <Text
+                  style={{
+                    textAlign: "center",
+                    fontSize: 24,
+                    fontWeight: 700,
+                    marginBottom: 20,
+                  }}
+                >
+                  Регистрация
+                </Text>
+                <Text
+                  style={{ fontSize: 19, fontWeight: 400, marginBottom: 10 }}
+                >
+                  Логин
+                </Text>
+                <TextInput
+                  onChangeText={(e) => getInfo(fullInfo.login = e)}
+                  style={{
+                    backgroundColor: "white",
+                    padding: 10,
+                    borderRadius: 8,
+                    marginBottom: 15,
+                  }}
+                  placeholder="Укажите логин"
+                />
+                <Text
+                  style={{ fontSize: 19, fontWeight: 400, marginBottom: 10 }}
+                >
+                  Телефон
+                </Text>
+                <TextInput
+                  onChangeText={(e) => getInfo(fullInfo.phone = e)}
+                  style={{
+                    backgroundColor: "white",
+                    padding: 10,
+                    borderRadius: 8,
+                    marginBottom: 15,
+                  }}
+                  placeholder="Укажите телефон"
+                />
+                <Text
+                  style={{ fontSize: 19, fontWeight: 400, marginBottom: 10 }}
+                >
+                  Пароль
+                </Text>
+                <TextInput
+                  onChangeText={(e) => getInfo(fullInfo.password = e)}
+                  style={{
+                    backgroundColor: "white",
+                    padding: 10,
+                    borderRadius: 8,
+                    marginBottom: 20,
+                  }}
+                  placeholder="Укажите пароль"
+                />
+                <Button
+                  title="Отправить"
+                  onPress={sendUser}
+                  style={{
+                    width: "100%",
+                    backgroundColor: "rgb(255, 105, 0)",
+                    borderRadius: 100,
+                  }}
+                />
+              </View>
+            </View>
+          </Modal>
           <View
             style={{
               display: "flex",
@@ -48,7 +160,14 @@ export default function Main({ navigation }) {
               </Text>
               <FontAwesome name="chevron-down" />
             </View>
-            <FontAwesome style={{ fontSize: 20 }} name="search" />
+            <View style={{ display: "flex", flexDirection: "row" }}>
+              <FontAwesome style={{ fontSize: 20 }} name="search" />
+              <FontAwesome
+                onPress={() => setModalVisible((modalVisible = true))}
+                style={{ fontSize: 20, marginLeft: 10 }}
+                name="user"
+              />
+            </View>
           </View>
           <View style={{ padding: 15, width: "100%" }}>
             <View
