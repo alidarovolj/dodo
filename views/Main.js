@@ -10,9 +10,10 @@ import {
   SafeAreaView,
   FlatList,
   Image,
+  TouchableHighlight,
 } from "react-native";
 
-export default function Main() {
+export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
   async function getAllProducts() {
     let res = await axios.get("http://localhost:3000/goods");
@@ -90,43 +91,47 @@ export default function Main() {
             style={{ width: "100%" }}
             data={allProducts}
             renderItem={({ item }) => (
-              <View
-                style={{
-                  width: "100%",
-                  padding: 15,
-                  borderBottom: "1px solid rgb(245, 245, 248)",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
+              <TouchableHighlight
+                onPress={() => navigation.navigate("SinglePage", item)}
               >
-                <Image
-                  style={{ width: "40%" }}
-                  source={{ uri: item.images[0] }}
-                />
-                <View style={{ width: "60%", paddingLeft: 5 }}>
-                  <Text style={{ fontWeight: "600", marginBottom: 8 }}>
-                    {item.title}
-                  </Text>
-                  <Text>{item.desc}</Text>
-                  <Text
-                    style={{
-                      backgroundColor: "#ffefe5",
-                      color: "#de813f",
-                      width: "fit-content",
-                      paddingTop: 5,
-                      paddingBottom: 5,
-                      paddingRight: 10,
-                      paddingLeft: 10,
-                      fontSize: 18,
-                      borderRadius: 15,
-                      marginTop: 10,
-                    }}
-                  >
-                    от {item.price}т
-                  </Text>
+                <View
+                  style={{
+                    width: "100%",
+                    padding: 15,
+                    borderBottom: "1px solid rgb(245, 245, 248)",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Image
+                    style={{ width: "40%" }}
+                    source={{ uri: item.images[0] }}
+                  />
+                  <View style={{ width: "60%", paddingLeft: 5 }}>
+                    <Text style={{ fontWeight: "600", marginBottom: 8 }}>
+                      {item.title}
+                    </Text>
+                    <Text>{item.desc}</Text>
+                    <Text
+                      style={{
+                        backgroundColor: "#ffefe5",
+                        color: "#de813f",
+                        width: "fit-content",
+                        paddingTop: 5,
+                        paddingBottom: 5,
+                        paddingRight: 10,
+                        paddingLeft: 10,
+                        fontSize: 18,
+                        borderRadius: 15,
+                        marginTop: 10,
+                      }}
+                    >
+                      от {item.price}т
+                    </Text>
+                  </View>
                 </View>
-              </View>
+              </TouchableHighlight>
             )}
           />
         </View>
