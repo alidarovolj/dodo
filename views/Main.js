@@ -17,11 +17,7 @@ import {
 
 export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
-  var [fullInfo, getInfo] = useState({
-    login: "",
-    phone: "",
-    password: "",
-  });
+  var [fullInfo, getInfo] = useState("");
   var [modalVisible, setModalVisible] = useState(false);
   async function getAllProducts() {
     let res = await axios.get("http://localhost:3000/goods");
@@ -29,9 +25,8 @@ export default function Main({ navigation }) {
     getProduct(newProducts);
   }
   async function sendUser() {
-    console.log(fullInfo.login);
-    console.log(fullInfo.phone);
-    console.log(fullInfo.password);
+    await axios.post("http://localhost:3000/users", { login: fullInfo });
+    console.log(fullInfo);
   }
   getAllProducts();
   return (
@@ -87,7 +82,7 @@ export default function Main({ navigation }) {
                   Логин
                 </Text>
                 <TextInput
-                  onChangeText={(e) => getInfo(fullInfo.login = e)}
+                  onChangeText={(e) => getInfo(fullInfo = e)}
                   style={{
                     backgroundColor: "white",
                     padding: 10,
@@ -96,13 +91,13 @@ export default function Main({ navigation }) {
                   }}
                   placeholder="Укажите логин"
                 />
-                <Text
+                {/* <Text
                   style={{ fontSize: 19, fontWeight: 400, marginBottom: 10 }}
                 >
                   Телефон
                 </Text>
                 <TextInput
-                  onChangeText={(e) => getInfo(fullInfo.phone = e)}
+                  onChangeText={(e) => newValues.phone = e}
                   style={{
                     backgroundColor: "white",
                     padding: 10,
@@ -117,7 +112,7 @@ export default function Main({ navigation }) {
                   Пароль
                 </Text>
                 <TextInput
-                  onChangeText={(e) => getInfo(fullInfo.password = e)}
+                  onChangeText={(e) => newValues.password = e}
                   style={{
                     backgroundColor: "white",
                     padding: 10,
@@ -125,7 +120,7 @@ export default function Main({ navigation }) {
                     marginBottom: 20,
                   }}
                   placeholder="Укажите пароль"
-                />
+                /> */}
                 <Button
                   title="Отправить"
                   onPress={sendUser}
