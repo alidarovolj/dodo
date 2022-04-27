@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import {
@@ -19,13 +19,32 @@ export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
   var [fullLogin, getLogin] = useState("");
   var [fullPhone, getPhone] = useState("");
-  var [cookieInfo, getCookie] = useState(localStorage.getItem('login'));
+  // var [cookieInfo, getCookie] = useState(localStorage.getItem("login"));
   var [fullPassword, getPassword] = useState("");
+  var [loginLogin, getLoginName] = useState("");
+  var [loginPassword, getPasswordName] = useState("");
+  var [allUsers, getUser] = useState(null);
   var [modalVisible, setModalVisible] = useState(false);
-  async function getAllProducts() {
-    let res = await axios.get("http://localhost:3000/goods");
-    let newProducts = res.data;
-    getProduct(newProducts);
+  function getProducts() {
+    useEffect(() => {
+      async function getAllProducts() {
+        let res = await axios.get("http://localhost:3000/goods");
+        let newProducts = res.data;
+        getProduct(newProducts);
+      }
+      getAllProducts();
+    }, []);
+  }
+  function getUsers() {
+    useEffect(() => {
+      async function getAllUsers() {
+        let res = await axios.get("http://localhost:3000/users");
+        let newUsers = res.data;
+        getUser(newUsers);
+        console.log(newUsers);
+      }
+      getAllUsers();
+    }, []);
   }
   async function sendUser() {
     await axios.post("http://localhost:3000/users", {
@@ -33,16 +52,23 @@ export default function Main({ navigation }) {
       phone: fullPhone,
       password: fullPassword,
     });
-    localStorage.setItem('login', fullLogin)
-    localStorage.getItem('login')
-    // localStorage.removeItem('login'),
-    // localStorage.clear()
   }
-  getAllProducts();
+  function login() {
+    for (let i = 0; i <= allUsers.length; i++) {
+      if (
+        allUsers[i].login === loginLogin &&
+        allUsers[i].password === loginPassword
+      ) {
+        localStorage.setItem("loggedIn", allUsers[i]);
+      }
+    }
+  }
+  localStorage.clear();
+  getProducts();
+  getUsers();
   return (
     <SafeAreaView>
       <ScrollView>
-        {cookieInfo}
         <View style={styles.container}>
           <Modal
             animationType="slide"
@@ -169,7 +195,7 @@ export default function Main({ navigation }) {
                     Логин
                   </Text>
                   <TextInput
-                    onChangeText={(e) => getLogin((fullLogin = e))}
+                    onChangeText={(e) => getLoginName((loginLogin = e))}
                     style={{
                       backgroundColor: "white",
                       padding: 10,
@@ -184,7 +210,7 @@ export default function Main({ navigation }) {
                     Пароль
                   </Text>
                   <TextInput
-                    onChangeText={(e) => getPassword((fullPassword = e))}
+                    onChangeText={(e) => getPasswordName((loginPassword = e))}
                     style={{
                       backgroundColor: "white",
                       padding: 10,
@@ -195,7 +221,7 @@ export default function Main({ navigation }) {
                   />
                   <Button
                     title="Отправить"
-                    onPress={sendUser}
+                    onPress={login}
                     style={{
                       width: "100%",
                       backgroundColor: "rgb(255, 105, 0)",
