@@ -40,8 +40,40 @@
       "phone": "87472367503"
     },
     {
-      "login": "qwerty",
+      "login": "Olzhas",
+      "phone": "215467123786",
+      "password": "qwerty",
       "id": 2
+    },
+    {
+      "login": "dhsakjsjagfjask",
+      "phone": "42178949712",
+      "password": "dkaosfjasi",
+      "id": 3
+    },
+    {
+      "login": "lsadhj",
+      "phone": "912478412",
+      "password": "doaspkfl;z",
+      "id": 4
+    },
+    {
+      "login": "hdjisajo",
+      "phone": "742198",
+      "password": "okpaskdls",
+      "id": 5
+    },
+    {
+      "login": "fjakjkas",
+      "phone": "34218941287",
+      "password": "jkdasmda",
+      "id": 6
+    },
+    {
+      "login": "dsajkldasj",
+      "phone": "90892014",
+      "password": "kopdsak",
+      "id": 7
     }
   ]
 }
