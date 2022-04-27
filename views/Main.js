@@ -19,7 +19,9 @@ export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
   var [fullLogin, getLogin] = useState("");
   var [fullPhone, getPhone] = useState("");
-  // var [cookieInfo, getCookie] = useState(localStorage.getItem("login"));
+  const cookieInfo = localStorage.getItem("loggedIn");
+  var hello = null;
+  var [getCurrentUser, setCurrentUser] = useState("");
   var [fullPassword, getPassword] = useState("");
   var [loginLogin, getLoginName] = useState("");
   var [loginPassword, getPasswordName] = useState("");
@@ -41,7 +43,6 @@ export default function Main({ navigation }) {
         let res = await axios.get("http://localhost:3000/users");
         let newUsers = res.data;
         getUser(newUsers);
-        console.log(newUsers);
       }
       getAllUsers();
     }, []);
@@ -59,13 +60,23 @@ export default function Main({ navigation }) {
         allUsers[i].login === loginLogin &&
         allUsers[i].password === loginPassword
       ) {
-        localStorage.setItem("loggedIn", allUsers[i]);
+        localStorage.setItem("loggedIn", allUsers[i].login);
+      } else {
+        console.log("Данные не совпадают");
       }
     }
   }
-  localStorage.clear();
+
+  function someFunction() {
+    allUsers?.forEach((element) => {
+      if (element.login == cookieInfo) {
+        setCurrentUser(element)
+      }
+    });
+  }
   getProducts();
   getUsers();
+  someFunction();
   return (
     <SafeAreaView>
       <ScrollView>
@@ -256,11 +267,14 @@ export default function Main({ navigation }) {
             </View>
             <View style={{ display: "flex", flexDirection: "row" }}>
               <FontAwesome style={{ fontSize: 20 }} name="search" />
-              <FontAwesome
-                onPress={() => setModalVisible((modalVisible = true))}
-                style={{ fontSize: 20, marginLeft: 10 }}
-                name="user"
-              />
+              <View>
+                <FontAwesome
+                  onPress={() => setModalVisible((modalVisible = true))}
+                  style={{ fontSize: 20, marginLeft: 10 }}
+                  name="user"
+                />
+                <Text>{getCurrentUser.login}</Text>
+              </View>
             </View>
           </View>
           <View style={{ padding: 15, width: "100%" }}>
