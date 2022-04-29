@@ -19,9 +19,10 @@ export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
   var [fullLogin, getLogin] = useState("");
   var [fullPhone, getPhone] = useState("");
-  const cookieInfo = localStorage.getItem("loggedIn");
-  var hello = null;
-  var [getCurrentUser, setCurrentUser] = useState("");
+  const cookieInfoLogin = localStorage.getItem("loggedInLogin");
+  const cookieInfoPhone = localStorage.getItem("loggedInPhone");
+  const cookieInfoPassword = localStorage.getItem("loggedInPassword");
+  var [getCurrentUser, setCurrentUser] = useState([]);
   var [fullPassword, getPassword] = useState("");
   var [loginLogin, getLoginName] = useState("");
   var [loginPassword, getPasswordName] = useState("");
@@ -55,28 +56,33 @@ export default function Main({ navigation }) {
     });
   }
   function login() {
-    for (let i = 0; i <= allUsers.length; i++) {
-      if (
-        allUsers[i].login === loginLogin &&
-        allUsers[i].password === loginPassword
-      ) {
-        localStorage.setItem("loggedIn", allUsers[i].login);
+    allUsers?.forEach((item) => {
+      if (item.login === loginLogin && item.password === loginPassword) {
+        localStorage.setItem("loggedInLogin", item.login);
+        localStorage.setItem("loggedInPhone", item.phone);
+        localStorage.setItem("loggedInPassword", item.password);
       } else {
         console.log("Данные не совпадают");
       }
-    }
-  }
-
-  function someFunction() {
-    allUsers?.forEach((element) => {
-      if (element.login == cookieInfo) {
-        setCurrentUser(element)
-      }
     });
   }
+  // function setFunc() {
+  //   useEffect(() => {
+  //     async function setFunction() {
+  //       allUsers?.forEach((element) => {
+  //         if (element.login == cookieInfo) {
+  //           console.log("jhdkalsjdlksa");
+  //         } else {
+  //           console.log("nothing");
+  //         }
+  //       });
+  //     }
+  //     setFunction()
+  //   }, []);
+  // }
   getProducts();
   getUsers();
-  someFunction();
+  // setFunc();
   return (
     <SafeAreaView>
       <ScrollView>
@@ -265,15 +271,21 @@ export default function Main({ navigation }) {
               </Text>
               <FontAwesome name="chevron-down" />
             </View>
-            <View style={{ display: "flex", flexDirection: "row" }}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
               <FontAwesome style={{ fontSize: 20 }} name="search" />
-              <View>
+              <View style={{ textAlign: "center", marginLeft: 10 }}>
                 <FontAwesome
                   onPress={() => setModalVisible((modalVisible = true))}
-                  style={{ fontSize: 20, marginLeft: 10 }}
+                  style={{ fontSize: 20 }}
                   name="user"
                 />
-                <Text>{getCurrentUser.login}</Text>
+                <Text>{cookieInfoLogin}</Text>
               </View>
             </View>
           </View>

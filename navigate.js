@@ -15,11 +15,7 @@ export default function Navigate() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="Main"
-          component={Main}
-          options={{ title: "Главная" }}
-        />
+        <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="SinglePage" component={SinglePage} />
       </Stack.Navigator>
     </NavigationContainer>

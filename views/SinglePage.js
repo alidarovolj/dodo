@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {
   Text,
@@ -14,6 +15,34 @@ export default function App({ route, navigation }) {
   const loadScene = () => {
     navigation.goBack();
   };
+  const login = localStorage.getItem("loggedInLogin");
+  const order = route.params.title;
+  const price = route.params.price;
+  var final = [];
+  var res = {
+    goods: order,
+    user_login: login,
+    price: price,
+    status: false,
+  };
+  async function sendOrder() {
+    var prevZakaz = await axios.get("http://localhost:3000/orders");
+    var prevZakazData = prevZakaz.data;
+    if (prevZakazData.length <= 0) {
+      await axios.post("http://localhost:3000/orders", [res]);
+      console.log("Отправлено");
+    } else {
+      prevZakazData.forEach((element) => {
+        element.forEach((item) => {
+          if (item.user_login == login && item.status === false) {
+            final.push(item);
+          }
+        });
+      });
+      await axios.post("http://localhost:3000/orders", final);
+      console.log(final);
+    }
+  }
   return (
     <SafeAreaView>
       <ScrollView>
@@ -28,9 +57,6 @@ export default function App({ route, navigation }) {
           >
             <Text
               style={{
-                shadowOffset: { width: 10, height: 10 },
-                shadowColor: "black",
-                shadowOpacity: 1,
                 elevation: 3,
                 backgroundColor: "white",
                 padding: 10,
@@ -53,7 +79,17 @@ export default function App({ route, navigation }) {
               style={{ width: null, minHeight: 350 }}
               source={{ uri: route.params.images[0] }}
             />
-            <Text>{route.params.title}</Text>
+            <View
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                backdropFilter: "blur(20px)",
+              }}
+            >
+              <Text style={{ fontSize: 24, marginBottom: 20 }}>
+                {route.params.title}
+              </Text>
+              <Button onPress={sendOrder} title="Отправить заказ" />
+            </View>
           </View>
         </View>
       </ScrollView>
