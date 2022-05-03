@@ -16,31 +16,46 @@ export default function App({ route, navigation }) {
     navigation.goBack();
   };
   const login = localStorage.getItem("loggedInLogin");
-  const order = route.params.title;
+  const order = {
+    title: route.params.title,
+    price: route.params.price,
+    options: [],
+  };
   const price = route.params.price;
-  var final = [];
   var res = {
-    goods: order,
+    goods: [order],
     user_login: login,
     price: price,
     status: false,
   };
+  var result = null;
+  var setItem = null;
+  var finalPrice = null;
   async function sendOrder() {
     var prevZakaz = await axios.get("http://localhost:3000/orders");
     var prevZakazData = prevZakaz.data;
+    var itemID = null;
     if (prevZakazData.length <= 0) {
-      await axios.post("http://localhost:3000/orders", [res]);
+      await axios.post("http://localhost:3000/orders", res);
       console.log("Отправлено");
     } else {
-      prevZakazData.forEach((element) => {
-        element.forEach((item) => {
-          if (item.user_login == login && item.status === false) {
-            final.push(item);
-          }
-        });
+      prevZakazData.forEach((item) => {
+        if (item.user_login == login && item.status === false) {
+          item.goods.forEach(element => {
+            finalPrice += element.price
+          });
+          setItem = {
+            title: route.params.title,
+            price: route.params.price,
+            options: [],
+          };
+          item.price = finalPrice + setItem.price;
+          item.goods.push(setItem);
+          itemID = item.id;
+          result = item;
+        }
       });
-      await axios.post("http://localhost:3000/orders", final);
-      console.log(final);
+      await axios.put("http://localhost:3000/orders/" + itemID, result);
     }
   }
   return (

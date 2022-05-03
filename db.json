@@ -94,6 +94,52 @@
     }
   ],
   "orders": [
+    {
+      "goods": [
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        },
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        },
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        },
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        }
+      ],
+      "user_login": "alidarov",
+      "price": 9200,
+      "status": false,
+      "id": 1
+    },
+    {
+      "goods": [
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        },
+        {
+          "title": "Домашняя",
+          "price": 2300,
+          "options": []
+        }
+      ],
+      "user_login": "olzhas",
+      "price": 4600,
+      "status": false,
+      "id": 2
+    }
   ],
   "users": [
     {

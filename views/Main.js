@@ -17,16 +17,18 @@ import {
 
 export default function Main({ navigation }) {
   var [allProducts, getProduct] = useState(null);
+  var [allOrders, getOrder] = useState(null);
   var [fullLogin, getLogin] = useState("");
   var [fullPhone, getPhone] = useState("");
   const cookieInfoLogin = localStorage.getItem("loggedInLogin");
   const cookieInfoPhone = localStorage.getItem("loggedInPhone");
   const cookieInfoPassword = localStorage.getItem("loggedInPassword");
-  var [getCurrentUser, setCurrentUser] = useState([]);
+  var [currentOrder, getCurrentOrder] = useState("");
+  // var [getCurrentUser, setCurrentUser] = useState([]);
   var [fullPassword, getPassword] = useState("");
   var [loginLogin, getLoginName] = useState("");
   var [loginPassword, getPasswordName] = useState("");
-  var [allUsers, getUser] = useState(null);
+  var [allUsers, getUser] = useState("");
   var [modalVisible, setModalVisible] = useState(false);
   function getProducts() {
     useEffect(() => {
@@ -36,6 +38,21 @@ export default function Main({ navigation }) {
         getProduct(newProducts);
       }
       getAllProducts();
+    }, []);
+  }
+  function getOrders() {
+    useEffect(() => {
+      async function getAllOrders() {
+        let res = await axios.get("http://localhost:3000/orders");
+        let newOrders = res.data;
+        newOrders.forEach(element => {
+          if(element.user_login == cookieInfoLogin && element.status == false) {
+            getCurrentOrder(currentOrder = element);
+          }
+        });
+        getOrder(allOrders = newOrders);
+      }
+      getAllOrders();
     }, []);
   }
   function getUsers() {
@@ -82,6 +99,7 @@ export default function Main({ navigation }) {
   // }
   getProducts();
   getUsers();
+  getOrders()
   // setFunc();
   return (
     <SafeAreaView>
@@ -375,6 +393,51 @@ export default function Main({ navigation }) {
           />
         </View>
       </ScrollView>
+      <View
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "row",
+          width: "100%",
+          justifyContent: "space-between",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          mixBlendMode: "luminosity",
+          paddingTop: 10,
+          paddingBottom: 10,
+          backgroundOpacity: 0,
+        }}
+      >
+        <View style={{ textAlign: "center", width: "25%" }}>
+          <FontAwesome
+            style={{ fontSize: 20, marginBottom: 5 }}
+            name="fa-pizza-slice"
+          />
+          <Text style={{ fontSize: 12 }}>Меню</Text>
+        </View>
+        <View style={{ textAlign: "center", width: "25%" }}>
+          <FontAwesome style={{ fontSize: 20, marginBottom: 5 }} name="user" />
+          <Text style={{ fontSize: 12 }}>Профиль</Text>
+        </View>
+        <View style={{ textAlign: "center", width: "25%" }}>
+          <FontAwesome style={{ fontSize: 20, marginBottom: 5 }} name="map" />
+          <Text style={{ fontSize: 12 }}>Контакты</Text>
+        </View>
+        <View style={{ textAlign: "center", width: "25%" }}>
+          <View>
+            <FontAwesome
+              style={{ fontSize: 20, marginBottom: 5 }}
+              name="basket"
+            />
+            <Text style={{ color: "red" }}>
+              { currentOrder.price }
+            </Text>
+          </View>
+          <Text style={{ fontSize: 12 }}>Корзина</Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
