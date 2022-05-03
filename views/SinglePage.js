@@ -8,6 +8,7 @@ import {
   ScrollView,
   Image,
   StyleSheet,
+  FlatList,
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -41,8 +42,8 @@ export default function App({ route, navigation }) {
     } else {
       prevZakazData.forEach((item) => {
         if (item.user_login == login && item.status === false) {
-          item.goods.forEach(element => {
-            finalPrice += element.price
+          item.goods.forEach((element) => {
+            finalPrice += element.price;
           });
           setItem = {
             title: route.params.title,
@@ -103,7 +104,27 @@ export default function App({ route, navigation }) {
               <Text style={{ fontSize: 24, marginBottom: 20 }}>
                 {route.params.title}
               </Text>
+              <FlatList
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                }}
+                data={route.params.ingridients}
+                renderItem={({ item }) => <Text>{item}</Text>}
+              />
               <Button onPress={sendOrder} title="Отправить заказ" />
+              <FlatList
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                }}
+                data={route.params.ingridients}
+                renderItem={({ item }) => <Text style={{ width: "33.33%" }}>{item}</Text>}
+              />
             </View>
           </View>
         </View>
