@@ -72,26 +72,42 @@
         {
           "title": "Домашняя",
           "price": 2300,
-          "options": []
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg"
         },
         {
           "title": "Домашняя",
           "price": 2300,
-          "options": []
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg"
         },
         {
           "title": "Овощи гриль",
           "price": 2500,
-          "options": []
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/a402c8aba8a94496a0f71aa0baa975ca_760x760.jpeg"
         },
         {
           "title": "Домашняя",
           "price": 2300,
-          "options": []
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/54f1bebf8008465e828e573d312816ae_760x760.jpeg"
+        },
+        {
+          "title": "Классическая",
+          "price": 1800,
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/da0a83ee1bd248a28afe9565b59e1749_760x760.jpeg"
+        },
+        {
+          "title": "Овощи гриль",
+          "price": 2500,
+          "options": [],
+          "image": "https://dodopizza-a.akamaihd.net/static/Img/Products/a402c8aba8a94496a0f71aa0baa975ca_760x760.jpeg"
         }
       ],
       "user_login": "alidarov",
-      "price": 9400,
+      "price": 13700,
       "status": false,
       "id": 1
     }

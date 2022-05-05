@@ -367,7 +367,7 @@ export default function Main({ navigation }) {
                   }}
                 >
                   <Image
-                    style={{ width: "40%", objectFit: "cover" }}
+                    style={{ width: 150, height: 150, objectFit: "cover" }}
                     source={{ uri: item.images[0] }}
                   />
                   <View style={{ width: "60%", paddingLeft: 5 }}>
